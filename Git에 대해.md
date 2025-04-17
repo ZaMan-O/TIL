@@ -40,7 +40,7 @@ Git은 소프트웨어 개발 과정에서 소스 코드를 관리하는 버전 
 - 위와 같은 이유 덕분에 같은 환경에서 개발하며 시간을 단축하면서, 서로 충돌을 없애줍니다.
 
 ## Git 파일들의 상태
-![깃사이클](./gitcycle.png)
+![깃사이클](./Images/gitcycle.png)
 Git 파일 상태에는 총 4가지가 존재합니다.
 Untracked, Unmodified, Modified, Staged
 해당 상태들에 대해서는 아래에서 Git의 명령어를 설명하면서 다시 설명하도록 하겠습니다
@@ -50,11 +50,11 @@ https://git-scm.com/ < 이 사이트에서 Git을 다운받습니다.
 <br>
 Git을 다운받으시고 실행하시면 설치 하기전 다음 창이 뜰껍니다.
 
-![깃배쉬](./git_bash.png)
+![깃배쉬](./Images/git_bash.png)
 **여기서 Open Git Bash here을 체크해주시면 되겠습니다.**<br>
 
 ## Git 기본 명령어들
-![깃배쉬1](git_bash_1.png)
+![깃배쉬1](./Images/git_bash_1.png)
 GitHub 레포지토리와 연동을 하실 폴더에 들어가셔서 **Shift+우클릭**을 하시면 이와 같이 뜨실텐데, 여기서 **Open Git Bash here**를 눌러주세요. (해당 폴더를 디렉토리로 설정이 된 채로 Git Bash가 열립니다.)
 
 이제 cmd 창이 뜨셨을껍니다.
@@ -182,7 +182,7 @@ Pull Request를 할때 보면
 **다른 사람의 코드를 보고 어디를 고치면 좋을지 피드백을 해주는 과정 중 하나입니다**
 <br>
 PR 화면에서 다음과 같이 뜨실껍니다.
-![PR설명](./PR.png)
+![PR설명](./Images/PR.png)
 Reviewers : 현재 Pull Request(PR)을 리뷰를 해 줄 팀원 지정
 <br>
 Assignees : 현재 Pull Request(PR) 작업의 담당자 지정
@@ -199,7 +199,7 @@ Reviewer를 지정해주시면 해당 사람에게 메일로 알림이 갑니다
 브랜치를 체계적으로 나눠서 협업이 쉬워지고 안정성 있게 배포할 수 있게 해주는 버전 관리 전략을 말합니다.
 
 사진과 함께 설명을 하겠습니다
-![GitFlow](./GitFlow.png)
+![GitFlow](./Images/GitFlow.png)
 - main
 <br>
 실제 운영에 반영되어 있는 소스 코드들이 있는 브랜치
