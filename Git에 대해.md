@@ -41,6 +41,7 @@ Git은 소프트웨어 개발 과정에서 소스 코드를 관리하는 버전 
 
 ## Git 파일들의 상태
 ![깃사이클](./Images/gitcycle.png)
+<br>
 Git 파일 상태에는 총 4가지가 존재합니다.
 Untracked, Unmodified, Modified, Staged
 해당 상태들에 대해서는 아래에서 Git의 명령어를 설명하면서 다시 설명하도록 하겠습니다
@@ -55,6 +56,7 @@ Git을 다운받으시고 실행하시면 설치 하기전 다음 창이 뜰껍�
 
 ## Git 기본 명령어들
 ![깃배쉬1](./Images/git_bash_1.png)
+<br>
 GitHub 레포지토리와 연동을 하실 폴더에 들어가셔서 **Shift+우클릭**을 하시면 이와 같이 뜨실텐데, 여기서 **Open Git Bash here**를 눌러주세요. (해당 폴더를 디렉토리로 설정이 된 채로 Git Bash가 열립니다.)
 
 이제 cmd 창이 뜨셨을껍니다.
@@ -152,9 +154,12 @@ GitHub 레포지토리와 연동을 하실 폴더에 들어가셔서 **Shift+우
 ( GitHub에서 Settings -> Default Branch )
 <br>
 ( 해당 브랜치에서 git clone 또는 pull로 파일을 복사해옵니다. )
+<br>
 2. GitHub에서 Settings -> Collaborators -> Add People을 눌러서 자신의 프로젝트에 팀원들을 초대합니다.
+
 ### 협업 초기 세팅 (팀원)
 1. 본인이 같이 프로젝트를 진행할 빈 폴더를 생성합니다.
+<br>
 2. 아래와 같이 명령어를 적어서 해당 레포지토리를 복사해옵니다.
 
         git clone 레포지토리의 주소 .
@@ -183,6 +188,7 @@ Pull Request를 할때 보면
 <br>
 PR 화면에서 다음과 같이 뜨실껍니다.
 ![PR설명](./Images/PR.png)
+<br>
 Reviewers : 현재 Pull Request(PR)을 리뷰를 해 줄 팀원 지정
 <br>
 Assignees : 현재 Pull Request(PR) 작업의 담당자 지정
@@ -203,17 +209,25 @@ Reviewer를 지정해주시면 해당 사람에게 메일로 알림이 갑니다
 - main
 <br>
 실제 운영에 반영되어 있는 소스 코드들이 있는 브랜치
+<br>
 - release
+<br>
 1. 베타 배포 및 베타 QA를 위한 브랜치
+<br>
 2. main 배포 예정인 feature 브랜치들을 release에 취합한 후,
 Real 배포 전에 release->main으로 merge 한다
+<br>
 - develop
+<br>
 1. 알파 배포 및 알파 QA를 위한 브랜치
+<br>
 2. feature 브랜치 개발이 완료되어 알파QA를 원할 경우,
 배포 일정과 관계 없이 바로 develop 브랜치에 적용하여 알파 환경에서 테스트를 진행한다
+<br>
 - feature
 <br>
 기능 개발을 진행하는 브랜치
+<br>
 - hotfix
 <br>
 main 배포 후 급하게 수정해야할 경우 생성되는 브랜치
