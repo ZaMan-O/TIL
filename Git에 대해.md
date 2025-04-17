@@ -206,28 +206,28 @@ Reviewer를 지정해주시면 해당 사람에게 메일로 알림이 갑니다
 
 사진과 함께 설명을 하겠습니다
 ![GitFlow](./Images/GitFlow.png)
-- main
+> main
 <br>
-실제 운영에 반영되어 있는 소스 코드들이 있는 브랜치
+> 실제 운영에 반영되어 있는 소스 코드들이 있는 브랜치
+
+> release
 <br>
-- release
+> 1. 베타 배포 및 베타 QA를 위한 브랜치
 <br>
-1. 베타 배포 및 베타 QA를 위한 브랜치
+> 2. main 배포 예정인 feature 브랜치들을 release에 취합한 후,
+> Real 배포 전에 release->main으로 merge 한다
+
+> develop
 <br>
-2. main 배포 예정인 feature 브랜치들을 release에 취합한 후,
-Real 배포 전에 release->main으로 merge 한다
+> 1. 알파 배포 및 알파 QA를 위한 브랜치
 <br>
-- develop
-<br>
-1. 알파 배포 및 알파 QA를 위한 브랜치
-<br>
-2. feature 브랜치 개발이 완료되어 알파QA를 원할 경우,
+> 2. feature 브랜치 개발이 완료되어 알파QA를 원할 경우,
 배포 일정과 관계 없이 바로 develop 브랜치에 적용하여 알파 환경에서 테스트를 진행한다
+
+> feature
 <br>
-- feature
+> 기능 개발을 진행하는 브랜치
+
+> hotfix
 <br>
-기능 개발을 진행하는 브랜치
-<br>
-- hotfix
-<br>
-main 배포 후 급하게 수정해야할 경우 생성되는 브랜치
+> main 배포 후 급하게 수정해야할 경우 생성되는 브랜치
