@@ -112,7 +112,7 @@ Repository 계층은 **데이터베이스와 직접 통신을 하는 계층입�
 
 ## Bean 등록 방법
 ### 자동 등록
-클래스 위에 `@Component`, `@Service`, `@Repository`, `@Controller`, `RestController`와 같은 애너테이션을 붙이면 **자동으로 Bean으로 등록이 됩니다.**
+클래스 위에 `@Component`, `@Service`, `@Repository`, `@Controller`, `RestController`를 붙이면 **자동으로 Bean으로 등록이 됩니다.**
 
     @Component
     @Service
@@ -136,9 +136,9 @@ Repository 계층은 **데이터베이스와 직접 통신을 하는 계층입�
     }
 
 ## Bean 주입 방법
-1. 인자로 주입 받기 : 생성자에 `@Autowired`를 붙여서 스프링이 빈을 찾아서 의존성을 주입해주게 합니다.
+1. 인자로 주입 받기 : 생성자에 `@Autowired`를 붙여서 Spring이 Bean을 찾아서 의존성을 주입해주게 합니다.
 
-2. 필드 주입 : 클래스의 변수에 바로 `@Autowired`를 붙여서 주입하는 방식이지만, 코드가 스프링에 의존적이게 된다는 단점이 있습니다.
+2. 필드 주입 : 클래스의 변수에 바로 `@Autowired`를 붙여서 주입하는 방식이지만, 코드가 Spring에 의존적이게 된다는 단점이 있습니다.
 
 ### IoC
 객체 생성과 그 의존성**(매개 변수나 리턴값 또는 지역변수 등으로 다른 객체를 참조하는 것)** 연결을 개발자가 직접 하지 않고, **프레임워크(Spring)가 대신 해주는 것**을 IoC 라고 합니다.
