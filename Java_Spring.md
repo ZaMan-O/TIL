@@ -1,7 +1,8 @@
 # Java
 ## 객체지향
-객체지향은 프로그램을 여러개의 독립된 단위인 객체들의 모임을 뜻합니다.
+**현실 세계를 흉내 내어 객체라는 단위로 프로그램을 구성하는 방법**을 객체지향 이라고 합니다.
 
+사람, 자동차, 게임 캐릭터처럼 **무언가를 하나의 독립된 단위로 보고, 이걸 중심으로 프로그램을 만든다**는 겁니다.
 객체지향(Java, C# 등)은 절차지향(C 언어 등)과 장단점이 확실히 구분이 됩니다.
 
 ### 자판기를 객체지향으로 나타낸다면
@@ -18,9 +19,9 @@
 
 ## 기초 문법
 ### 원시 자료형
-int, string, boolean과 같이 **고정된 저장 공간을 차지하고 하나의 변수마다 하나의 데이터만 담을 수 있는 것**을 원시 자료형이라고 합니다.
+int, double, boolean, **char** 자료형과 같이 **고정된 저장 공간을 차지하고 하나의 변수마다 하나의 데이터만 담을 수 있는 것**을 원시 자료형이라고 합니다.
 ### 참조 자료형
-배열, 객체, 함수와 같이 **데이터를 직접 저장하는 것이 아니라, 메모리 위치를 가리키는 주소를 저장하는 것**을 참조 자료형이라고 합니다.
+배열, 객체, 함수, String과 같이 **데이터를 직접 저장하는 것이 아니라, 메모리 위치를 가리키는 주소를 저장하는 것**을 참조 자료형이라고 합니다.
 
 ## 클래스, 메서드, 객체, 인터페이스, 인스턴스
 ### 클래스
@@ -46,12 +47,16 @@ int, string, boolean과 같이 **고정된 저장 공간을 차지하고 하나�
 ### 인터페이스
 인터페이스는 메서드 이름만 정의하고, 실제 구현은 하지 않는 것을 말합니다.
 
+주로 인터페이스는 **기능과 규칙을 정의하기 위해서 사용합니다.**
+<br>
+그리고 여러 클래스가 같은 인터페이스로 구현이 가능하고(다형성), 클래스는 하나만 상속이 가능하지만 인터페이스는 여러 개 구현이 가능하다는 장점들이 있어서 사용을 많이 합니다.
+
 #### 선언 예시
     public interface Animal{
         public void Animal_Type();
     }
 <br>
-    
+
     public class Dog implements Animal{
         @Override
         public void Animal_Type(){
@@ -75,7 +80,7 @@ int, string, boolean과 같이 **고정된 저장 공간을 차지하고 하나�
 ![alt text](./Images/Java_Spring/Controller.png)
 ( templates 폴더에 있는 Hello(return으로 반환되는 String) 파일을 찾고 **data 속성을 Hello World**로 설정합니다. )
 
-### MVC
+### MVC ( Model View Controller )
 **MVC는 프로그램 구조를 세 부분으로 나눈 설계 방식입니다.**
 - Model : 데이터 (DB의 회원 정보 등)
 - View : 사용자에게 보여지는 부분 (HTML 등)
@@ -105,9 +110,35 @@ Repository 계층은 **데이터베이스와 직접 통신을 하는 계층입�
 ### Bean
 내가 만든 클래스가 아닌, **Spring이 직접 생성하고 관리하는 객체**를 Bean 이라고 합니다.
 
-그 예로는, `@Component`, `@Service`, `@Repository`, `@Controller` 등이 붙은 클래스가 있습니다.
-<br>
-이런 방법은 자동으로 Bean을 등록하지만, `@Bean`**을 사용해서 직접 수동으로 등록하는 방법도 있습니다.**
+## Bean 등록 방법
+### 자동 등록
+클래스 위에 `@Component`, `@Service`, `@Repository`, `@Controller`, `RestController`와 같은 애너테이션을 붙이면 **자동으로 Bean으로 등록이 됩니다.**
+
+    @Component
+    @Service
+    @Repository
+    @Controller
+    @RestController
+    public class MyService {
+        ...
+    }
+
+### 수동 등록
+@Configuration과 @Bean을 이용하여 Bean으로 등록을 할 수 있습니다.
+
+    @Configuration
+    public class AppConfig {
+
+        @Bean
+        public MyService myService() {
+            return new MyService();
+        }
+    }
+
+## Bean 주입 방법
+1. 인자로 주입 받기 : 생성자에 `@Autowired`를 붙여서 스프링이 빈을 찾아서 의존성을 주입해주게 합니다.
+
+2. 필드 주입 : 클래스의 변수에 바로 `@Autowired`를 붙여서 주입하는 방식이지만, 코드가 스프링에 의존적이게 된다는 단점이 있습니다.
 
 ### IoC
 객체 생성과 그 의존성**(매개 변수나 리턴값 또는 지역변수 등으로 다른 객체를 참조하는 것)** 연결을 개발자가 직접 하지 않고, **프레임워크(Spring)가 대신 해주는 것**을 IoC 라고 합니다.
