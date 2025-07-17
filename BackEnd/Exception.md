@@ -21,7 +21,7 @@
 - 예외가 발생해도 앱 전체가 중지되지 않고 안전하게 진행 가능
 
 # 사용 방법
-![패키지구조](../Images/Exception/package.png)
+![패키지구조](../BackEnd/_Images/Exception/package.png)
 <br>주로 Exception(예외) 패키지에 예외들을 저장합니다.
 <br>그리고 도메인 기반 구조 + 글로벌 공통 계층 구조를 사용할때는
 <br>domain에는 해당 기능에서만 쓰이는 예외를,
